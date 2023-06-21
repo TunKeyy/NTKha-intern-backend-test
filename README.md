@@ -18,7 +18,7 @@ npm install
 ```c
 npm start
 ```
-###Create Tables and Insert data to Database
+### Create Tables and Insert data to Database
 - Go to the directory `./src/app/config` and change the database properties to `<your database properties>`.
 ```c
 development: {
