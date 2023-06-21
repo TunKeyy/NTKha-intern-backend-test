@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      User.hasMany(models.Store, { foreignKey: 'store_id' });
+      User.hasOne(models.Contract, { foreignKey: 'user_id' });
+      User.hasMany(models.JobRequest, { foreignKey: 'user_id' });
     }
   }
   User.init({
@@ -25,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     identify_code: DataTypes.STRING,
     address: DataTypes.STRING,
     is_verify: DataTypes.BOOLEAN,
-    user_type: DataTypes.NUMBER
+    user_type: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
