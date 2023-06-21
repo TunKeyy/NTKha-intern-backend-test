@@ -74,7 +74,7 @@ class UserController {
             if (!user || user.is_verify == true) {
                 return res
                 .status(400)
-                .json({ message: "Liên kết xác nhận không hợp lệ" });
+                .json({ message: "Bạn không thể thực hiện thao tác này" });
             
                 }
             
